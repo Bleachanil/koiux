@@ -1,49 +1,25 @@
 
-# Household Expense App
-
-A Flutter application to manage household expenses.
-
-## Features
-
-- Track and categorize household expenses.
-- View monthly expense reports.
-- Set budget limits for different expense categories.
-- User-friendly interface for easy expense entry.
-
-## Figma Screenshots
-
-![figma ui flow](figma_flow.png)
-![figma ui flow 2](figma_flow2.png)
-
-## Mobile App Screenshots
-
-![1](1.jpg)
-![2](2.jpg)
-![3](3.jpg)
-![4](4.jpg)
-![5](5.jpg)
-![6](6.jpg)
-![7](7.jpg)
-![8](8.jpg)
-![9](9.jpg)
-![10](10.jpg)
-![11](11.jpg)
-![12](12.jpg)
-
-
-## Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-- Flutter installed on your machine. [Install Flutter](https://flutter.dev/docs/get-started/install)
+### Table of contents
+- [System requirements](#system-requirements)
+- [Figma design guidelines for better UI accuracy](#figma-design-guideline-for-better-accuracy)
+- [Check the UI of the entire app](#app-navigations)
+- [Application structure](#project-structure)
+- [How to format your code?](#how-you-can-do-code-formatting)
+- [How you can improve code readability?](#how-you-can-improve-the-readability-of-code)
+- [Libraries and tools used](#libraries-and-tools-used)
+- [Support](#support)
 
 ### System requirements
 
 Dart SDK Version 2.18.0 or greater.
 Flutter SDK Version 3.3.0 or greater.
 
+### Figma design guidelines for better UI accuracy
+- visit figma for more correct info
+
+### Check the UI of the entire app
+
+Check the UI of all the app screens from a single place by setting up the 'initialRoute'  to AppNavigation in the AppRoutes.dart file.
 
 ### Application structure
 After successful build, your application structure should look like this:
@@ -64,30 +40,16 @@ After successful build, your application structure should look like this:
     └── theme                       - It contains app theme and decoration classes
     └── widgets                     - It contains all custom widget classes
 ```
+### How to format your code?
 
-### Installing
+- if your code is not formatted then run following command in your terminal to format code
+  ```
+  dart format .
+  ```
 
-1. Clone the repository:
+### How you can improve code readability?
 
-   ```bash
-   git clone https://github.com/your-username/household_expense_app.git
+Resolve the errors and warnings that are shown in the application.
 
-2. Navigate to the project directory:
+### Support
 
-   ```bash
-   cd koiux
-
-3. Install dependencies:
-
-   ```bash
-   flutter pub get
-
-4. Run the app:
-
-   ```bash
-   flutter run
-
-
-### License
-
-#### !! Free for all, Feel free to visit again !!
