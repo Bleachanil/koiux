@@ -1,4 +1,5 @@
 import 'package:anil_kumar_s_application2/core/app_export.dart';
+import 'package:anil_kumar_s_application2/presentation/budget_household_page/budget_household_page.dart';
 import 'package:anil_kumar_s_application2/presentation/budget_individual_page/budget_individual_page.dart';
 import 'package:anil_kumar_s_application2/presentation/household_division_popup_page/household_division_popup_page.dart';
 import 'package:anil_kumar_s_application2/widgets/custom_bottom_bar.dart';
@@ -38,13 +39,13 @@ class BudgetIndividualTabContainerScreenState
             children: [
               _buildHeaderNavigation(context),
               _buildTabview(context),
-              SizedBox(
-                height: 740.v,
+              Expanded(
+                // height: 500.v,
                 child: TabBarView(
                   controller: tabviewController,
                   children: [
                     BudgetIndividualPage(),
-                    BudgetIndividualPage(),
+                    BudgetHouseholdPage(),
                   ],
                 ),
               ),
@@ -103,7 +104,7 @@ class BudgetIndividualTabContainerScreenState
                 ),
                 CustomImageView(
                   imagePath: ImageConstant.imgSelectionLine120,
-                  height: 1.v,
+                  // height: 1.v,
                   width: 210.h,
                   margin: EdgeInsets.only(top: 6.v),
                 ),
@@ -119,8 +120,8 @@ class BudgetIndividualTabContainerScreenState
   Widget _buildBottomBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {
-        Navigator.pushNamed(
-            navigatorKey.currentContext!, getCurrentRoute(type));
+        print('type $type');
+        Navigator.pushNamed(context, getCurrentRoute(type));
       },
     );
   }
@@ -129,15 +130,15 @@ class BudgetIndividualTabContainerScreenState
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
       case BottomBarEnum.Dashboard:
-        return AppRoutes.householdDivisionPopupPage;
+        return AppRoutes.dashboardScreen;
       case BottomBarEnum.Expense:
-        return "/";
+        return AppRoutes.budgetIndividualTabContainerScreen;
       case BottomBarEnum.Add:
-        return "/";
+        return AppRoutes.addScreen;
       case BottomBarEnum.Household:
-        return "/";
+        return AppRoutes.householdListScreen;
       case BottomBarEnum.More:
-        return "/";
+        return AppRoutes.sidebarScreen;
       default:
         return "/";
     }

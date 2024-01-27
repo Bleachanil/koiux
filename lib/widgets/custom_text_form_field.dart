@@ -84,7 +84,19 @@ class CustomTextFormField extends StatelessWidget {
         : textFormFieldWidget(context);
   }
 
-  Widget textFormFieldWidget(BuildContext context) => SizedBox(
+  Widget textFormFieldWidget(BuildContext context) => Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            // const BoxShadow(blurRadius: 8, color: Colors.black),
+            const BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 0,
+              blurRadius: 10,
+              offset: Offset(0, 4),
+            )
+          ],
+          borderRadius: BorderRadius.circular(5.0),
+        ),
         width: width ?? double.maxFinite,
         child: TextFormField(
           scrollPadding:

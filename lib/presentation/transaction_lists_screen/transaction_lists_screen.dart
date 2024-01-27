@@ -9,10 +9,21 @@ class TransactionListsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            appBar: AppBar(
+              backgroundColor: Color(0xFFD4F4E4),
+              title: Text('Expenses'),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(
+                      context); // Navigate back when the back button is pressed
+                },
+              ),
+            ),
             body: SizedBox(
                 width: double.maxFinite,
                 child: Column(children: [
-                  _buildHeaderNavigation(context),
+                  // _buildHeaderNavigation(context),
                   SizedBox(height: 50.v),
                   _buildTransactionLists(context)
                 ]))));
@@ -38,6 +49,7 @@ class TransactionListsScreen extends StatelessWidget {
               child: RichText(
                   text: TextSpan(children: [
                     TextSpan(text: " "),
+                    
                     TextSpan(
                         text: "Expenses",
                         style: CustomTextStyles.titleLargeff002117)

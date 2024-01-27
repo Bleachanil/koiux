@@ -3,10 +3,32 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class UserprofilesectionItemWidget extends StatelessWidget {
-  const UserprofilesectionItemWidget({Key? key})
+  UserprofilesectionItemWidget({Key? key, required this.index})
       : super(
           key: key,
         );
+  final int index;
+  String name = 'xin';
+  String imageName() {
+    print('$index : index is here');
+    switch (index) {
+      case 0:
+        name = 'hari';
+        return ImageConstant.imgImage150x50;
+      case 1:
+        name = 'krishna';
+        return ImageConstant.imgImage250x50;
+      case 2:
+        name = 'sonam';
+        return ImageConstant.imgImage350x50;
+      case 3:
+        name = 'Ronak';
+        return ImageConstant.imgImage150x50;
+      default:
+        name = 'hari';
+        return ImageConstant.imgImage150x50;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +43,7 @@ class UserprofilesectionItemWidget extends StatelessWidget {
               borderRadius: BorderRadiusStyle.circleBorder32,
             ),
             child: CustomImageView(
-              imagePath: ImageConstant.imgImage1,
+              imagePath: imageName(),
               height: 64.adaptSize,
               width: 64.adaptSize,
               radius: BorderRadius.circular(
@@ -32,7 +54,7 @@ class UserprofilesectionItemWidget extends StatelessWidget {
           ),
           SizedBox(height: 4.v),
           Text(
-            "xian",
+            name,
             style: CustomTextStyles.bodySmallGray800,
           ),
         ],

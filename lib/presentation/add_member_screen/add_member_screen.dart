@@ -57,7 +57,7 @@ class AddMemberScreen extends StatelessWidget {
                 },
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return UserprofileItemWidget();
+                  return UserprofileItemWidget(index: index);
                 })));
   }
 

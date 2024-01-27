@@ -39,12 +39,14 @@ class BudgetHouseholdPageState extends State<BudgetHouseholdPage>
                     _buildBalanceSection(context),
                     SizedBox(height: 14.v),
                     _buildUserProfileSection(context),
-                    SizedBox(height: 28.v),
+                    SizedBox(height: 10.v),
                     CustomOutlinedButton(
+                      decoration:
+                          BoxDecoration(color: theme.colorScheme.primary),
                       text: "Expenses",
                       margin: EdgeInsets.symmetric(horizontal: 5.h),
                     ),
-                    SizedBox(height: 27.v),
+                    SizedBox(height: 10.v),
                     _buildDrawerNavSection(context),
                   ],
                 ),
@@ -141,7 +143,7 @@ class BudgetHouseholdPageState extends State<BudgetHouseholdPage>
   /// Section Widget
   Widget _buildUserProfileSection(BuildContext context) {
     return SizedBox(
-      height: 83.v,
+      height: 100.v,
       child: ListView.separated(
         padding: EdgeInsets.only(
           left: 18.h,
@@ -158,7 +160,7 @@ class BudgetHouseholdPageState extends State<BudgetHouseholdPage>
         },
         itemCount: 4,
         itemBuilder: (context, index) {
-          return UserprofilesectionItemWidget();
+          return UserprofilesectionItemWidget(index: index);
         },
       ),
     );
@@ -167,9 +169,10 @@ class BudgetHouseholdPageState extends State<BudgetHouseholdPage>
   /// Section Widget
   Widget _buildDrawerNavSection(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 5.h),
+      // margin: EdgeInsets.only(left: 5.h),
       decoration: AppDecoration.outlineBlack90001.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder2,
+        // color: Colors.red
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -186,8 +189,8 @@ class BudgetHouseholdPageState extends State<BudgetHouseholdPage>
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 16.h,
-                      vertical: 10.v,
+                      horizontal: 10.h,
+                      vertical: 5.v,
                     ),
                     decoration: AppDecoration.fillRedA.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder2,
@@ -324,7 +327,8 @@ class BudgetHouseholdPageState extends State<BudgetHouseholdPage>
                             ],
                           ),
                         ),
-                        Spacer(),
+                        // Spacer(),
+                        SizedBox(width: 30,),
                         CustomImageView(
                           imagePath: ImageConstant.imgIconCheck,
                           height: 16.adaptSize,
@@ -366,19 +370,19 @@ class BudgetHouseholdPageState extends State<BudgetHouseholdPage>
               ),
             ],
           ),
-          SizedBox(height: 1.v),
-          _buildFrameSeventyTwo(
-            context,
-            arrowUpImage: ImageConstant.imgArrowUp,
-            waterBillText: "Loans",
-            totalEurosText: " Total: 270 aud",
-          ),
-          SizedBox(height: 8.v),
-          CustomImageView(
-            imagePath: ImageConstant.imgIconAdauga,
-            height: 24.adaptSize,
-            width: 24.adaptSize,
-          ),
+          // SizedBox(height: 1.v),
+          // _buildFrameSeventyTwo(
+          //   context,
+          //   arrowUpImage: ImageConstant.imgArrowUp,
+          //   waterBillText: "Loans",
+          //   totalEurosText: " Total: 270 aud",
+          // ),
+          // SizedBox(height: 8.v),
+          // CustomImageView(
+          //   imagePath: ImageConstant.imgIconAdauga,
+          //   height: 24.adaptSize,
+          //   width: 24.adaptSize,o
+          // ),
         ],
       ),
     );

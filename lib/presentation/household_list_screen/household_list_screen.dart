@@ -10,31 +10,45 @@ class HouseholdListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: SizedBox(
-                width: double.maxFinite,
-                child: Column(children: [
-                  _buildHeaderNavigation(context),
-                  SizedBox(height: 48.v),
-                  Text("Members",
-                      style: CustomTextStyles.titleMediumBluegray900),
-                  SizedBox(height: 19.v),
-                  _buildCardTransaction(context),
-                  SizedBox(height: 433.v),
-                  Padding(
-                      padding: EdgeInsets.only(right: 18.h),
-                      child: CustomIconButton(
-                          height: 56.adaptSize,
-                          width: 56.adaptSize,
-                          padding: EdgeInsets.all(16.h),
-                          decoration: IconButtonStyleHelper.outlineBlackTL28,
-                          alignment: Alignment.centerRight,
-                          onTap: () {
-                            onTapBtnPlus(context);
-                          },
-                          child: CustomImageView(
-                              imagePath: ImageConstant.imgPlus))),
-                  SizedBox(height: 5.v)
-                ]))));
+      body: SizedBox(
+          width: double.maxFinite,
+          child: Column(children: [
+            _buildHeaderNavigation(context),
+            SizedBox(height: 48.v),
+            Text("Members", style: CustomTextStyles.titleMediumBluegray900),
+            SizedBox(height: 19.v),
+            _buildCardTransaction(context),
+            // SizedBox(height: 433.v),
+            // Padding(
+            //     padding: EdgeInsets.only(right: 18.h),
+            //     child: CustomIconButton(
+            //         height: 56.adaptSize,
+            //         width: 56.adaptSize,
+            //         padding: EdgeInsets.all(16.h),
+            //         decoration: IconButtonStyleHelper.outlineBlackTL28,
+            //         alignment: Alignment.centerRight,
+            //         onTap: () {
+            //           onTapBtnPlus(context);
+            //         },
+            //         child: CustomImageView(
+            //             imagePath: ImageConstant.imgPlus))),
+
+            SizedBox(height: 5.v)
+          ])),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Your action here
+          print('Customized Floating Action Button Pressed');
+          onTapBtnPlus(context);
+        },
+        child: Icon(Icons.add, color: Colors.black),
+        backgroundColor: Colors.white, // Set the background color to white
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Set the border radius
+        ),
+        tooltip: 'Custom FAB', // Add a tooltip
+      ),
+    ));
   }
 
   /// Section Widget
@@ -71,7 +85,7 @@ class HouseholdListScreen extends StatelessWidget {
             },
             itemCount: 3,
             itemBuilder: (context, index) {
-              return Cardtransaction1ItemWidget();
+              return Cardtransaction1ItemWidget( index: index);
             }));
   }
 

@@ -7,15 +7,29 @@ import 'package:anil_kumar_s_application2/widgets/custom_elevated_button.dart';
 import 'package:anil_kumar_s_application2/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class AddScreen extends StatelessWidget {
+class AddScreen extends StatefulWidget {
   AddScreen({Key? key})
       : super(
           key: key,
         );
 
+  @override
+  State<AddScreen> createState() => _AddScreenState();
+}
+
+class _AddScreenState extends State<AddScreen> {
   TextEditingController inputController = TextEditingController();
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+
+  int selectedListIndex = 0;
+
+  void regenerateList(value) {
+    print('$value anilkarki');
+    setState(() {
+      selectedListIndex = value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,11 +89,11 @@ class AddScreen extends StatelessWidget {
                                           text: "89,0",
                                           style: theme.textTheme.displayMedium,
                                         ),
-                                        TextSpan(
-                                          text: "|",
-                                          style: CustomTextStyles
-                                              .displayMediumThin,
-                                        ),
+                                        // TextSpan(
+                                        //   text: "|",
+                                        //   style: CustomTextStyles
+                                        //       .displayMediumThin,
+                                        // ),
                                       ],
                                     ),
                                     textAlign: TextAlign.left,
@@ -162,6 +176,10 @@ class AddScreen extends StatelessWidget {
                 ),
                 buttonTextStyle: CustomTextStyles.titleMediumWhiteA700_1,
                 alignment: Alignment.center,
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, AppRoutes.budgetIndividualTabContainerScreen);
+                },
               ),
               SizedBox(height: 5.v),
             ],
@@ -213,8 +231,12 @@ class AddScreen extends StatelessWidget {
       child: Wrap(
         runSpacing: 12.v,
         spacing: 12.h,
-        children:
-            List<Widget>.generate(2, (index) => FrameninetyfourItemWidget()),
+        children: List<Widget>.generate(
+            2,
+            (index) => FrameninetyfourItemWidget(
+                index: index,
+                regenerateList: regenerateList,
+                selectedListIndex: selectedListIndex)),
       ),
     );
   }
@@ -239,7 +261,7 @@ class AddScreen extends StatelessWidget {
           physics: NeverScrollableScrollPhysics(),
           itemCount: 8,
           itemBuilder: (context, index) {
-            return AddItemWidget();
+            return AddItemWidget(index: index);
           },
         ),
       ),
@@ -250,8 +272,8 @@ class AddScreen extends StatelessWidget {
   Widget _buildBottomBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {
-        Navigator.pushNamed(
-            navigatorKey.currentContext!, getCurrentRoute(type));
+        print('type $type');
+        Navigator.pushNamed(context, getCurrentRoute(type));
       },
     );
   }
@@ -260,15 +282,15 @@ class AddScreen extends StatelessWidget {
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
       case BottomBarEnum.Dashboard:
-        return AppRoutes.householdDivisionPopupPage;
+        return AppRoutes.dashboardScreen;
       case BottomBarEnum.Expense:
-        return "/";
+        return AppRoutes.budgetIndividualTabContainerScreen;
       case BottomBarEnum.Add:
-        return "/";
+        return AppRoutes.addScreen;
       case BottomBarEnum.Household:
-        return "/";
+        return AppRoutes.householdListScreen;
       case BottomBarEnum.More:
-        return "/";
+        return AppRoutes.sidebarScreen;
       default:
         return "/";
     }

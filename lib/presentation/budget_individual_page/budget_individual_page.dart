@@ -30,6 +30,8 @@ class BudgetIndividualPageState extends State<BudgetIndividualPage>
                         _buildTotalExpenseRow(context),
                         SizedBox(height: 35.v),
                         CustomOutlinedButton(
+                            decoration:
+                                BoxDecoration(color: theme.colorScheme.primary),
                             text: "Expenses",
                             margin: EdgeInsets.only(left: 6.h)),
                         SizedBox(height: 12.v),

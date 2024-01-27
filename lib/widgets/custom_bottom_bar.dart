@@ -63,7 +63,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
         showUnselectedLabels: false,
         selectedFontSize: 0,
         elevation: 0,
-        currentIndex: selectedIndex,
+        currentIndex: getCurrentRouteIndex(context),
         type: BottomNavigationBarType.fixed,
         items: List.generate(bottomMenuList.length, (index) {
           return BottomNavigationBarItem(
@@ -119,6 +119,39 @@ class CustomBottomBarState extends State<CustomBottomBar> {
         },
       ),
     );
+  }
+
+  String getCurrentRouteName(BuildContext context) {
+    // Use ModalRoute.of to get the current route
+    final currentRoute = ModalRoute.of(context);
+
+    // Check if the currentRoute is not null and has a settings property
+    if (currentRoute != null && currentRoute.settings.name != null) {
+      // Return the name of the current route
+      return currentRoute.settings.name!;
+    }
+
+    // Default to an empty string if the route name is not available
+    return "";
+  }
+
+  int getCurrentRouteIndex(context) {
+    String currentRouteName = getCurrentRouteName(context);
+
+    switch (currentRouteName) {
+      case '/dashboard_screen':
+        return 0;
+      case '/budget_individual_tab_container_screen':
+        return 1;
+      case '/add_screen':
+        return 2;
+      case '/household_list_screen':
+        return 3;
+      case '/sidebar_screen':
+        return 4;
+      default:
+        return 0;
+    }
   }
 }
 

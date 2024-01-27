@@ -1170,16 +1170,6 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
-  Widget _buildBottomBar(BuildContext context) {
-    return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {
-        print('type $type');
-        Navigator.pushNamed(context, getCurrentRoute(type));
-      },
-    );
-  }
-
   /// Common widget
   Widget _buildEightySix(
     BuildContext context, {
@@ -1227,9 +1217,18 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
+  /// Section Widget
+  Widget _buildBottomBar(BuildContext context) {
+    return CustomBottomBar(
+      onChanged: (BottomBarEnum type) {
+        print('type $type');
+        Navigator.pushNamed(context, getCurrentRoute(type));
+      },
+    );
+  }
+
   ///Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
-    print('come');
     switch (type) {
       case BottomBarEnum.Dashboard:
         return AppRoutes.dashboardScreen;

@@ -3,10 +3,29 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class Cardtransaction1ItemWidget extends StatelessWidget {
-  const Cardtransaction1ItemWidget({Key? key})
+  Cardtransaction1ItemWidget({Key? key, required this.index})
       : super(
           key: key,
         );
+  final int index;
+  String name = 'xin';
+  String imageName() {
+    print('$index : index is here');
+    switch (index) {
+      case 0:
+        name = 'xin';
+        return ImageConstant.imgImage150x50;
+      case 1:
+      name = 'lin';
+        return ImageConstant.imgImage250x50;
+      case 2:
+      name = 'kim';
+        return ImageConstant.imgImage350x50;
+      default:
+      name = 'jim';
+        return ImageConstant.imgImage150x50;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +53,7 @@ class Cardtransaction1ItemWidget extends StatelessWidget {
                     borderRadius: BorderRadiusStyle.circleBorder25,
                   ),
                   child: CustomImageView(
-                    imagePath: ImageConstant.imgImage350x50,
+                    imagePath: imageName(),
                     height: 50.adaptSize,
                     width: 50.adaptSize,
                     radius: BorderRadius.circular(
@@ -54,7 +73,7 @@ class Cardtransaction1ItemWidget extends StatelessWidget {
                       ),
                       SizedBox(height: 1.v),
                       Text(
-                        "xian",
+                        name,
                         style: theme.textTheme.bodyLarge,
                       ),
                     ],

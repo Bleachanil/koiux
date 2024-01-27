@@ -6,7 +6,7 @@ class CustomIconButton extends StatelessWidget {
     Key? key,
     this.alignment,
     this.height,
-    this.width,
+    this.width, 
     this.padding,
     this.decoration,
     this.child,

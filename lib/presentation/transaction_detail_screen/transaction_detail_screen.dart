@@ -14,7 +14,7 @@ class TransactionDetailScreen extends StatelessWidget {
             appBar: _buildAppBar(context),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 28.h, vertical: 20.v),
+                padding: EdgeInsets.symmetric(horizontal: 28.h, vertical: 0.v),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -78,15 +78,26 @@ class TransactionDetailScreen extends StatelessWidget {
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: double.maxFinite,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeftGray600,
-            margin: EdgeInsets.fromLTRB(25.h, 11.v, 380.h, 20.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        styleType: Style.bgFill);
+    // return CustomAppBar(
+    //     leadingWidth: double.maxFinite,
+    //     leading: AppbarLeadingImage(
+    //         imagePath: ImageConstant.imgArrowLeftGray600,
+    //         margin: EdgeInsets.fromLTRB(25.h, 11.v, 380.h, 20.v),
+    //         onTap: () {
+    //           onTapArrowLeft(context);
+    //         }),
+    //     styleType: Style.bgFill);
+    return AppBar(
+      // backgroundColor: Color(0xFFD4F4E4),
+      // title: Text('Expenses'),
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.pop(
+              context); // Navigate back when the back button is pressed
+        },
+      ),
+    );
   }
 
   /// Section Widget

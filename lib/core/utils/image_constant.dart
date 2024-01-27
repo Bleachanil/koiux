@@ -8,7 +8,7 @@ class ImageConstant {
   // signin images
   static String imgContrast = '$imagePath/img_contrast.svg';
 
-  static String imgFacebook = '$imagePath/img_facebook.svg';
+  // static String imgFacebook = '$imagePath/img_facebook.svg';
 
   static String imgMdiTwitter = '$imagePath/img_mdi_twitter.svg';
 
@@ -145,4 +145,10 @@ class ImageConstant {
   static String imgPlus = '$imagePath/img_plus.svg';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
+
+  static String imgFacebook = '$imagePath/img_facebook.png';
+
+  static String imgGoogle = '$imagePath/img_google.png';
+
+  static String imgTwitter = '$imagePath/img_twitter.png';
 }

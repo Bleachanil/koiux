@@ -56,7 +56,7 @@ class SigninScreen extends StatelessWidget {
                                         SizedBox(height: 7.v),
                                         CustomTextFormField(
                                             controller: passwordController,
-                                            hintText: "*******************",
+                                            // hintText: "*******************",
                                             hintStyle:
                                                 theme.textTheme.titleLarge!,
                                             textInputAction:
@@ -78,10 +78,10 @@ class SigninScreen extends StatelessWidget {
                                                 left: 12.h,
                                                 top: 8.v,
                                                 bottom: 8.v)),
-                                        SizedBox(height: 5.v),
-                                        Text("Password does not match",
-                                            style: CustomTextStyles
-                                                .labelLargeRedA10001),
+                                        // SizedBox(height: 5.v),
+                                        // Text("Password does not match",
+                                        //     style: CustomTextStyles
+                                        //         .labelLargeRedA10001),
                                         SizedBox(height: 48.v),
                                         CustomElevatedButton(
                                             height: 48.v,
@@ -99,40 +99,19 @@ class SigninScreen extends StatelessWidget {
                                         SizedBox(height: 13.v),
                                         Padding(
                                             padding: EdgeInsets.only(
-                                                left: 15.h, right: 55.h),
+                                                left: 15.h, right: 30.h),
                                             child: Row(children: [
-                                              CustomIconButton(
-                                                  height: 62.adaptSize,
-                                                  width: 62.adaptSize,
-                                                  padding: EdgeInsets.all(22.h),
-                                                  decoration:
-                                                      IconButtonStyleHelper
-                                                          .outlineBlack,
-                                                  child: CustomImageView(
+                                              CustomImageView(
                                                       imagePath: ImageConstant
-                                                          .imgContrast)),
+                                                          .imgGoogle),
                                               Spacer(flex: 50),
-                                              CustomIconButton(
-                                                  height: 62.adaptSize,
-                                                  width: 62.adaptSize,
-                                                  padding: EdgeInsets.all(22.h),
-                                                  decoration:
-                                                      IconButtonStyleHelper
-                                                          .outlineBlack,
-                                                  child: CustomImageView(
-                                                      imagePath: ImageConstant
-                                                          .imgFacebook)),
+                                              CustomImageView(
+                                                      imagePath:
+                                                          ImageConstant.imgFacebook),
                                               Spacer(flex: 50),
-                                              CustomIconButton(
-                                                  height: 62.adaptSize,
-                                                  width: 62.adaptSize,
-                                                  padding: EdgeInsets.all(22.h),
-                                                  decoration:
-                                                      IconButtonStyleHelper
-                                                          .outlineBlack,
-                                                  child: CustomImageView(
-                                                      imagePath: ImageConstant
-                                                          .imgMdiTwitter))
+                                              CustomImageView(
+                                                      imagePath:
+                                                          ImageConstant.imgTwitter),
                                             ])),
                                         SizedBox(height: 71.v),
                                         Padding(

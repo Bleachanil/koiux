@@ -4,10 +4,29 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class UserprofileItemWidget extends StatelessWidget {
-  const UserprofileItemWidget({Key? key})
+  UserprofileItemWidget({Key? key, required this.index})
       : super(
           key: key,
         );
+  final int index;
+  String name = 'xin';
+  String imageName() {
+    print('$index : index is here');
+    switch (index) {
+      case 0:
+        name = 'hari';
+        return ImageConstant.imgImage150x50;
+      case 1:
+        name = 'krishna';
+        return ImageConstant.imgImage250x50;
+      case 2:
+        name = 'sonam';
+        return ImageConstant.imgImage350x50;
+      default:
+        name = 'hari';
+        return ImageConstant.imgImage150x50;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +54,7 @@ class UserprofileItemWidget extends StatelessWidget {
                     borderRadius: BorderRadiusStyle.circleBorder25,
                   ),
                   child: CustomImageView(
-                    imagePath: ImageConstant.imgImage250x50,
+                    imagePath: imageName(),
                     height: 50.adaptSize,
                     width: 50.adaptSize,
                     radius: BorderRadius.circular(
@@ -59,7 +78,7 @@ class UserprofileItemWidget extends StatelessWidget {
                       ),
                       SizedBox(height: 1.v),
                       Text(
-                        "lian",
+                        name,
                         style: theme.textTheme.bodyLarge,
                       ),
                     ],
@@ -74,7 +93,7 @@ class UserprofileItemWidget extends StatelessWidget {
               height: 40.adaptSize,
               width: 40.adaptSize,
               padding: EdgeInsets.all(8.h),
-              decoration: IconButtonStyleHelper.outlineBlackTL20,
+              decoration: IconButtonStyleHelper.outlineBlue,
               child: CustomImageView(
                 imagePath: ImageConstant.imgPlus,
               ),
