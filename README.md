@@ -17,18 +17,22 @@ A Flutter application to manage household expenses.
 
 ## Mobile App Screenshots
 
-![1](1.jpg)
-![2](2.jpg)
-![3](3.jpg)
-![4](4.jpg)
-![5](5.jpg)
-![6](6.jpg)
-![7](7.jpg)
-![8](8.jpg)
-![9](9.jpg)
-![10](10.jpg)
-![11](11.jpg)
-![12](12.jpg)
+<div style="display: flex; flex-wrap: wrap; gap: 16px;">
+  <img src="1.jpg" alt="Screenshot 1" width="200" height="400">
+  <img src="2.jpg" alt="Screenshot 2" width="200" height="400">
+  <img src="3.jpg" alt="Screenshot 3" width="200" height="400">
+  <img src="4.jpg" alt="Screenshot 4" width="200" height="400">
+  <img src="5.jpg" alt="Screenshot 5" width="200" height="400">
+  <img src="6.jpg" alt="Screenshot 6" width="200" height="400">
+  <img src="7.jpg" alt="Screenshot 7" width="200" height="400">
+  <img src="8.jpg" alt="Screenshot 8" width="200" height="400">
+  <img src="9.jpg" alt="Screenshot 9" width="200" height="400">
+  <img src="10.jpg" alt="Screenshot 10" width="200" height="400">
+  <img src="11.jpg" alt="Screenshot 11" width="200" height="400">
+  <img src="12.jpg" alt="Screenshot 12" width="200" height="400">
+</div>
+
+
 
 
 ## Getting Started
